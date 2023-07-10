@@ -1,4 +1,4 @@
-class Naiveproxy < Formula
+class Naiveproxy1 < Formula
   desc "naiveproxy client"
   homepage "https://github.com/klzgrad/naiveproxy"
   # download binary from upstream directly
