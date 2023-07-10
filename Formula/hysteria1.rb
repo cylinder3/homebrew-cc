@@ -1,4 +1,4 @@
-class Hysteria < Formula
+class Hysteria1 < Formula
   desc "hysteria client"
   homepage "https://github.com/apernet/hysteria"
   # download binary from upstream directly
