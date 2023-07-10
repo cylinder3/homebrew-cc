@@ -10,13 +10,27 @@ class Hysteria1 < Formula
   def install
     bin.install "hysteria-darwin-amd64-avx"
     (etc/"hysteria").mkpath
-    etc.install "config.json" => "hysteria/config.json-example"
   end
 
   def caveats
     <<~EOS
-      client config example has been installed to #{etc}/hysteria/config.json-example
-      please modify it and rename to config.json
+    Create hysteria configure file on `/usr/local/etc/hysteria/config.json`
+    {
+      "server": "example.com:5666",
+      "obfs": "pass",
+      "up_mbps": 10,
+      "down_mbps": 100,
+      "socks5": {
+        "listen": "ip:port"
+      },
+      "retry": 3,
+      "recv_window_conn": 100000000,
+      "recv_window": 250000000,
+      "fast_open": false,
+      "resolve_preference": "4"
+    }
+    To start the service, run:
+      brew services start hysteria1
     EOS
   end
 
