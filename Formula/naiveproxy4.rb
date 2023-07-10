@@ -26,7 +26,7 @@ class Naiveproxy4 < Formula
   end
 
   test do
-    system "#{bin}/naive", "--version"
+    system "/usr/local/bin/naive", "--version"
   end
 
   plist_options :manual => "naive #{HOMEBREW_PREFIX}/etc/naiveproxy/config.json"
@@ -45,7 +45,7 @@ class Naiveproxy4 < Formula
           <string>#{plist_name}</string>
           <key>ProgramArguments</key>
           <array>
-            <string>#{bin}/naive</string>
+            <string>/usr/local/bin/naive</string>
             <string>#{etc}/naiveproxy/config.json</string>
           </array>
         </dict>

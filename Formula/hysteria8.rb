@@ -35,7 +35,7 @@ class Hysteria8 < Formula
   end
 
   test do
-    system "#{bin}/hysteria-darwin-amd64-avx", "--version"
+    system "/usr/local/bin/hysteria-darwin-amd64-avx", "--version"
   end
 
   plist_options :manual => "hysteria-darwin-amd64-avx #{HOMEBREW_PREFIX}/etc/hysteria/config.json"
@@ -54,7 +54,8 @@ class Hysteria8 < Formula
           <string>#{plist_name}</string>
           <key>ProgramArguments</key>
           <array>
-            <string>#{bin}/hysteria-darwin-amd64-avx</string>
+            <string>/usr/local/bin/hysteria-darwin-amd64-avx</string>
+            <string>--config</string>
             <string>#{etc}/hysteria/config.json</string>
           </array>
         </dict>
