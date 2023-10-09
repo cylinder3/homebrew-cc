@@ -57,12 +57,12 @@ class Xray4 < Formula
   
     def caveats
       <<~EOS
-        An example config is installed to #{etc}/xray/config.json
+        An example config is installed to #{etc}/xray4/config.json
       EOS
     end
   
     service do
-      run [opt_bin/"xray", "run", "--config", "#{etc}/xray/config.json"]
+      run [opt_bin/"xray", "run", "--config", "#{etc}/xray/config4.json"]
       run_type :immediate
       keep_alive true
     end

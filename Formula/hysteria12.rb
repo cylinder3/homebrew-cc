@@ -39,7 +39,7 @@ class Hysteria12 < Formula
   end
 
   service do
-    run [opt_bin/"hysteria-darwin-amd64-avx", "--config", "#{etc}/hysteria/config.json"]
+    run [opt_bin/"hysteria-darwin-amd64-avx", "--config", "#{etc}/hysteria/hysteria12.json"]
     run_type :immediate
     keep_alive true
   end
