@@ -3,13 +3,13 @@ class Naiveproxy2 < Formula
   homepage "https://github.com/klzgrad/naiveproxy"
   # download binary from upstream directly
   if Hardware::CPU.intel?
-    url "https://github.com/klzgrad/naiveproxy/releases/download/v114.0.5735.91-3/naiveproxy-v114.0.5735.91-3-mac-x64.tar.xz"
-    sha256 "4568db5eefe9a643b0f1eca2de1acda89310894b3e6bbda3c73e6f4b40316af3"
+    url "https://github.com/klzgrad/naiveproxy/releases/download/v117.0.5938.44-1/naiveproxy-v117.0.5938.44-1-mac-x64.tar.xz"
+    sha256 "ab54c3ae82c4a07fdcded6d5c70b87c07316c693dd3d50ee60d4ed167c3096d2"
   else
-    url "https://github.com/klzgrad/naiveproxy/releases/download/v114.0.5735.91-3/naiveproxy-v114.0.5735.91-3-mac-arm64.tar.xz"
-    sha256 "fcb1aaa926cd474e9a074987a5e5f3ebc3c7db868ad28d71001111c3465ba7a9"
+    url "https://github.com/klzgrad/naiveproxy/releases/download/v117.0.5938.44-1/naiveproxy-v117.0.5938.44-1-mac-arm64.tar.xz"
+    sha256 "d261517d3213d7c94c46e1f01bbeb230abfcf8be7934549653810e341d7e3ff4"
   end
-  version "v114.0.5735.91-3"
+  version "v117.0.5938.44-1"
   license "BSD 3-Clause"
 
   def install
@@ -26,30 +26,12 @@ class Naiveproxy2 < Formula
   end
 
   test do
-    system "/usr/local/bin/naive", "--version"
+    system opt_bin/"naive", "--version"
   end
 
-  plist_options :manual => "naive #{HOMEBREW_PREFIX}/etc/naiveproxy/config.json"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-        <dict>
-          <key>KeepAlive</key>
-          <true/>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>ProgramArguments</key>
-          <array>
-            <string>/usr/local/bin/naive</string>
-            <string>#{etc}/naiveproxy/config.json</string>
-          </array>
-        </dict>
-      </plist>
-    EOS
+  service do
+    run [opt_bin/"naive", "#{etc}/naiveproxy/config.json"]
+    run_type :immediate
+    keep_alive true
   end
 end
