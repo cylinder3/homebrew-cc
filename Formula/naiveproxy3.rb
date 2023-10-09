@@ -30,7 +30,7 @@ class Naiveproxy3 < Formula
   end
 
   service do
-    run [opt_bin/"naive", "#{etc}/naiveproxy/config3.json"]
+    run [opt_bin/"naive", "#{etc}/naiveproxy/naiveproxy3.json"]
     run_type :immediate
     keep_alive true
   end

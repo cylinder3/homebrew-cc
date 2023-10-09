@@ -62,7 +62,7 @@ class Xray1 < Formula
     end
   
     service do
-      run [opt_bin/"xray", "run", "--config", "#{etc}/xray/config1.json"]
+      run [opt_bin/"xray", "run", "--config", "#{etc}/xray/xray1.json"]
       run_type :immediate
       keep_alive true
     end
