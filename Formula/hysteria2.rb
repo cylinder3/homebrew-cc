@@ -38,28 +38,9 @@ class Hysteria2 < Formula
     system "/usr/local/bin/hysteria-darwin-amd64-avx", "--version"
   end
 
-  plist_options :manual => "hysteria-darwin-amd64-avx #{HOMEBREW_PREFIX}/etc/hysteria/config.json"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-        <dict>
-          <key>KeepAlive</key>
-          <true/>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>ProgramArguments</key>
-          <array>
-            <string>/usr/local/bin/hysteria-darwin-amd64-avx</string>
-            <string>--config</string>
-            <string>#{etc}/hysteria/config.json</string>
-          </array>
-        </dict>
-      </plist>
-    EOS
+  service do
+    run [opt_bin/"hysteria-darwin-amd64-avx", "--config", "#{etc}/hysteria/config.json"]
+    run_type :immediate
+    keep_alive true
   end
 end
