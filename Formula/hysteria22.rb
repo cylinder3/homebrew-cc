@@ -4,17 +4,17 @@ class Hysteria22 < Formula
   # download binary from upstream directly
   url "https://github.com/apernet/hysteria/releases/download/app/v2.0.4/hysteria-darwin-amd64-avx"
   sha256 "125507fe88e6910e3ac78c86c8da84e4a0c6711483a9075f59501d61dc685d04"
-  version "app/v2.0.4"
+  version "v2.0.4"
   license "MIT"
 
   def install
     bin.install "hysteria-darwin-amd64-avx"
-    (etc/"hysteria").mkpath
+    (etc/"hysteria2").mkpath
   end
 
   def caveats
     <<~EOS
-    Create hysteria configure file on `/usr/local/etc/hysteria/config.json`
+    Create hysteria configure file on `/usr/local/etc/hysteria2/hysteria22.yaml`
     server: example.com:443
     auth: some_password
     transport:
@@ -48,7 +48,7 @@ class Hysteria22 < Formula
   end
 
   service do
-    run [opt_bin/"hysteria-darwin-amd64-avx", "-c", "#{etc}/hysteria/config.json"]
+    run [opt_bin/"hysteria-darwin-amd64-avx", "-c", "#{etc}/hysteria2/hysteria22.yaml"]
     run_type :immediate
     keep_alive true
   end
