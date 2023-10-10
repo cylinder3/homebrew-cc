@@ -5,7 +5,6 @@ class Xray3 < Formula
   sha256 "251c9455fd2793072d534e180eae60844d3ec05566c22009e7a7b8abf93371fc"
   license all_of: ["MPL-2.0", "CC-BY-SA-4.0"]
   version "v1.8.4"
-  end
 
   def install
     bin.install "xray"
