@@ -10,6 +10,7 @@ class Xray5 < Formula
     bin.install "xray"
     pkgshare.install "geoip.dat"
     pkgshare.install "geosite.dat"
+    (etc/"xray").mkpath
   end
 
   service do
