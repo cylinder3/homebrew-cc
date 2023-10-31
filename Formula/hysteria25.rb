@@ -2,9 +2,9 @@ class Hysteria25 < Formula
   desc "hysteria client"
   homepage "https://github.com/apernet/hysteria"
   # download binary from upstream directly
-  url "https://github.com/apernet/hysteria/releases/download/app/v2.0.4/hysteria-darwin-amd64-avx"
-  sha256 "125507fe88e6910e3ac78c86c8da84e4a0c6711483a9075f59501d61dc685d04"
-  version "v2.0.4"
+  url "https://github.com/apernet/hysteria/releases/download/app/v2.2.0/hysteria-darwin-amd64-avx"
+  sha256 "dcffb2637d5dabb8c4af8b8853dc5bc6e9ffa63e93b66ab2bf7413da5cd98d0a"
+  version "v2.2.0"
   license "MIT"
 
   def install
