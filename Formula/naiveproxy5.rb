@@ -3,13 +3,13 @@ class Naiveproxy5 < Formula
   homepage "https://github.com/klzgrad/naiveproxy"
   # download binary from upstream directly
   if Hardware::CPU.intel?
-    url "https://github.com/klzgrad/naiveproxy/releases/download/v117.0.5938.44-1/naiveproxy-v117.0.5938.44-1-mac-x64.tar.xz"
-    sha256 "ab54c3ae82c4a07fdcded6d5c70b87c07316c693dd3d50ee60d4ed167c3096d2"
+    url "https://github.com/klzgrad/naiveproxy/releases/download/v118.0.5993.65-1/naiveproxy-v118.0.5993.65-1-mac-x64.tar.xz"
+    sha256 "595d488e4b55aaaddd815a9f38fdc9d6139a2cfa12327928da5c2820793ba611"
   else
-    url "https://github.com/klzgrad/naiveproxy/releases/download/v117.0.5938.44-1/naiveproxy-v117.0.5938.44-1-mac-arm64.tar.xz"
-    sha256 "d261517d3213d7c94c46e1f01bbeb230abfcf8be7934549653810e341d7e3ff4"
+    url "https://github.com/klzgrad/naiveproxy/releases/download/v118.0.5993.65-1/naiveproxy-v118.0.5993.65-1-mac-arm64.tar.xz"
+    sha256 "3c12ce7797f420c00b813f0059107c8f9b70951429fcbbd9a9a864bcd900bbb7"
   end
-  version "v117.0.5938.44-1"
+  version "v118.0.5993.65-1"
   license "BSD 3-Clause"
 
   def install
