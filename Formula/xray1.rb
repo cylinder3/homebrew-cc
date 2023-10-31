@@ -8,8 +8,8 @@ class Xray1 < Formula
   
     def install
       bin.install "xray"
-      pkgshare.install "geoip.dat"
-      pkgshare.install "geosite.dat"
+      bin.install "geoip.dat"
+      bin.install "geosite.dat"
       (etc/"xray").mkpath
     end
   
