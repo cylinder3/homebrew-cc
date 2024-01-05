@@ -4,10 +4,10 @@ class Naiveproxy4 < Formula
   # download binary from upstream directly
   if Hardware::CPU.intel?
     url "https://github.com/klzgrad/naiveproxy/releases/download/v120.0.6099.43-1/naiveproxy-v120.0.6099.43-1-mac-x64.tar.xz"
-    sha256 "595d488e4b55aaaddd815a9f38fdc9d6139a2cfa12327928da5c2820793ba611"
+    sha256 "e617e6a9c7feda69508c11a730844fd5dbf2e6cc9419cbf2b629142c713bb240"
   else
     url "https://github.com/klzgrad/naiveproxy/releases/download/v120.0.6099.43-1/naiveproxy-v120.0.6099.43-1-mac-arm64.tar.xz"
-    sha256 "3c12ce7797f420c00b813f0059107c8f9b70951429fcbbd9a9a864bcd900bbb7"
+    sha256 "7818d44f29f65a92d4f7e5daaf9b02d1e0093e292bf7ce7926492dc21a95f055"
   end
   version "v120.0.6099.43-1"
   license "BSD 3-Clause"
