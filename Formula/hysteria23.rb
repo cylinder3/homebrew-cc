@@ -3,7 +3,7 @@ class Hysteria23 < Formula
   homepage "https://github.com/apernet/hysteria"
   # download binary from upstream directly
   url "https://github.com/apernet/hysteria/releases/download/app/v2.2.3/hysteria-darwin-amd64-avx"
-  sha256 "dcffb2637d5dabb8c4af8b8853dc5bc6e9ffa63e93b66ab2bf7413da5cd98d0a"
+  sha256 "b1667e079881da6929099dbef7e8f603fd720f373687c9f84ada2bb3892eeb7e"
   version "v2.2.3"
   license "MIT"
 
