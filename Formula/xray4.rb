@@ -1,10 +1,15 @@
 class Xray4 < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://xtls.github.io/"
-  url "https://github.com/XTLS/Xray-core/releases/download/v1.8.6/Xray-macos-64.zip"
-  sha256 "54616fe61381dad92cfa30030dda3211b3c2e86eb496b18a0462451e29728b5e"
+  if Hardware::CPU.intel?
+    url "https://github.com/XTLS/Xray-core/releases/download/v26.3.27/Xray-macos-64.zip"
+    sha256 "f5b0471d3459eff1b82e48af0aeac186abcc3298210070afbbbd8437a4e8b203"
+  else
+    url "https://github.com/XTLS/Xray-core/releases/download/v26.3.27/Xray-macos-arm64-v8a.zip"
+    sha256 "2e93a67e8aa1936ecefb307e120830fcbd4c643ab9b1c46a2d0838d5f8409eaf"
+  end
   license all_of: ["MPL-2.0", "CC-BY-SA-4.0"]
-  version "v1.8.6"
+  version "v26.3.27"
 
   def install
     bin.install "xray"
